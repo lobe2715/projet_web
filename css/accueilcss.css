@@ -87,12 +87,19 @@ a{
     referrerpolicy: "no-referrer-when-downgrade";
 }
 
-.event{
-    width: 400px;
-    height: 100%;
+.eventmot{
     position: absolute;
     left: 10px;
-    top: 150px;
-    background-color: white;
+    top: 120px;
+}
+
+.eventtxt{
+    resize: none;
+    height: 100%;
+    width: 400px;
+    border: 0px;
+    position: absolute;
+    top: 200px;
+    left: 10px;
     border: 2px gray solid;
 }
