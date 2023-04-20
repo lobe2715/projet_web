@@ -9,7 +9,7 @@
           $id = intval($_GET['id']);
 
           include('connex.inc.php');
-          $pdo = connexion('scolarite');
+          $pdo = connexion('gs05790v');
           try {
               $stmt = $pdo->prepare('SELECT * FROM etudiant WHERE id = :id');
               $stmt->bindParam(':id', $id);

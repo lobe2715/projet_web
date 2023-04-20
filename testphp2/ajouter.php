@@ -13,7 +13,7 @@
           $age = intval($_POST['age']);
 
           include('connex.inc.php');
-          $pdo = connexion('moch9073');
+          $pdo = connexion('gs05790v');
           try {
               $stmt = $pdo->prepare('INSERT INTO etudiant (nom, filiere, age) VALUES (:nom, :filiere, :age)');
               $stmt->bindParam(':nom', $nom);

@@ -12,7 +12,7 @@ a
 && isset($_POST['ordre'])
     ) {
         include("connex.inc.php");
-        $pdo = connexion('scolarite');
+        $pdo = connexion('gs05790v');
         try {
             $tri = 'age';
             if ($_POST['tri'] === 'filiere') {

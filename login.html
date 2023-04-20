@@ -12,15 +12,15 @@
 
 <body>
 
-  <form action="" method="get" class="register">
+  <form action="php/ajouter_profil.php" method="post" class="register">
     <p>S'enregistrer</p>
-    <input type="text" placeholder="Nom:">
-    <input type="text" placeholder="Prenom:">
-    <input type="text" placeholder="Identifiant:">
-    <input type="text" pattern="*@*.*" placeholder="Address Email:">
-    <input type="text" placeholder="Mot de passe:">
-    <input type="tel" pattern="[0-9]{10}" placeholder="Telephone:">
-    <button type="button">S'enregistrer</button>  
+    <input type="text" placeholder="Nom:" name="Nom">
+    <input type="text" placeholder="Prenom:" name="Prenom">
+    <input type="text" placeholder="Identifiant:" name="Identifiant">
+    <input type="text" pattern=".*@.*\..*" placeholder="Address Email:" name="Adresse">
+    <input type="text" placeholder="Mot de passe:" name="Mdp">
+    <input type="tel" pattern="[0-9]{10}" placeholder="Telephone:" name="Tel">
+    <button type="submit">S'enregistrer</button>  
   </form>
   <form class="login">
     <p>connection:</p>

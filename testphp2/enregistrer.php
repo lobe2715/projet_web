@@ -12,7 +12,7 @@
           $age = intval($_POST['age']);
 
           include('connex.inc.php');
-          $pdo = connexion('scolarite');
+          $pdo = connexion('gs05790v');
           try {
               $stmt = $pdo->prepare('UPDATE etudiant SET nom=:nom, filiere=:filiere, age=:age WHERE id=:id');
               $stmt->bindParam(':id', $id);
