@@ -1,8 +1,9 @@
 <?php
 /*Inclusion du fich*/
-require_once('connex.inc.php');
+include('connex.inc.php');
+include('create.php');
 
 /*connexion a ma base*/
 $pdo = connexion('gs05790v');
-
+create($pdo);
 ?>

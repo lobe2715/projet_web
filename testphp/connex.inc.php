@@ -1,5 +1,4 @@
 <?php
-
 function connexion($base)
 {
     include_once("param.inc.php");
