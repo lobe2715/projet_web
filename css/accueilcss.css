@@ -96,7 +96,7 @@ a{
 .eventtxt{
     resize: none;
     height: 100%;
-    width: 400px;
+    width: 450px;
     border: 0px;
     position: absolute;
     top: 200px;
@@ -108,6 +108,7 @@ a{
     border: 1px gray solid;
     width: 400px;
     height: 50px;
+    resize:none;
     background-color: rgb(233,233,0);
 
 }

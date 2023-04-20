@@ -1,9 +1,17 @@
 function add() {
-    X = document.createElement('textarea');
-    X.setAttribute("id", "commentaire");
-    X.setAttribute("name", "commentaire");
-    X.setAttribute("maxlength", 40);
-    X.setAttribute("style","resize:none");
-    X.setAttribute("class","classtest");
-    mon_input_texte.appendChild(X) ;
+    var div = document.createElement("div");
+    var text_zone = document.createElement("textarea");
+    var removeButton = document.createElement("button");
+    
+    text_zone.setAttribute("type", "text");
+    text_zone.setAttribute("name", "text_zone[]");
+    text_zone.setAttribute("class","classtest");
+    removeButton.innerHTML = "X";
+    removeButton.onclick = function() {
+	this.parentNode.parentNode.removeChild(this.parentNode);
+    };
+  
+    div.appendChild(text_zone);
+    div.appendChild(removeButton);
+    document.getElementById("boite_de_text").appendChild(div);
 }
