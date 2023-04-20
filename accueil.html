@@ -2,7 +2,7 @@
 <html lang=”fr”>
 
 <head>
-    <meta charset=”utf-8” X-Frame-Options: SOMEORIGIN >
+    <meta charset=”utf-8”>
     <title>Accueil</title>
     <link  href="css/accueilcss.css" rel="stylesheet" />
     <script src="javascrip/accueiljs.js"></script>
@@ -26,7 +26,8 @@
   </div>
 
   <div class="eventmot"><h1> Evenement:  </h1></div>
-  <textarea class="eventtxt"></textarea>
+  <span class="eventtxt" id="mon_input_texte"></span>
+  <button class="eventmot" id="button" value="Add" onclick="add()">add </button>
 
 
 
@@ -51,8 +52,7 @@
         </ul>
     </div>
     <a href="login.html"><img class="profil" src="image/profil-de-lutilisateur.png"> </a>
-    <span id="mon_input_texte"></span>
-    <button id="button" value="Add" onclick="add()">blabla </button>
+
   </header>
    
 </body> 
