@@ -5,7 +5,7 @@
     <meta charset=”utf-8”>
     <title>Login</title>
     <link  href="css/logincss.css" rel="stylesheet" />
-    <script src="javascrip/connection.js"></script>
+    <script src="javascrip/loginjs.js"></script>
 </head>
 
 
@@ -13,21 +13,24 @@
 <body>
   
   <div class="formulaire">
+    <button class="choix" type="button" onclick="register()">Enregistrer</button>
+    <button class="choix" type="button" onclick="login()">Connection</button>
     <form id="register" action="php/ajouter_profil.php" method="post" class="register">
-      <p>S'enregistrer</p>
-      <input type="text" placeholder="Nom:" name="Nom">
+      <p>S'enregistrer:</p>
+      <input align="center" type="text" placeholder="Nom:" name="Nom">
       <input type="text" placeholder="Prenom:" name="Prenom">
       <input type="text" pattern=".*@.*\..*" placeholder="Address Email:" name="Adresse">
       <input type="password" placeholder="Mot de passe:" name="Mdp">
-      <input type="tel" pattern="[0-9]{10}" placeholder="Telephone:" name="Tel"><br>
+      <input type="tel" pattern="[0-9]{10}" placeholder="Telephone:" name="Tel"><br><br>
       <button type="submit">S'enregistrer</button>  
     </form>
     <form id="login" class="login">
-      <p>connection:</p>
+      <p>Connection:</p>
       <input type="text" placeholder="Address Email:"> 
-      <input type="password" placeholder="Mot de passe:"><br>
+      <input type="password" placeholder="Mot de passe:"><br><br>
       <button type="button" onclick="edit_connection()">Connection</button>
     </form>
+    
   </div>
   <br>
   <br>
