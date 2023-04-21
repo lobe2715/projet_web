@@ -3,3 +3,14 @@ body{
     padding: 0px;
     margin:0;
 }
+
+.formulaire{
+    background-color: white;
+    width: 500px;
+    lenght: 500px;
+    position: absolute;
+    top: 200px;
+    left: 35%;
+    border-radius:30px;
+
+}
