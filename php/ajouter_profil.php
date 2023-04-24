@@ -19,6 +19,8 @@
           include('create.php');
           $pdo = connexion('gs05790v');
           create($pdo);
+          create_court($pdo);
+          create_element($pdo);
           try {
               $stmt = $pdo->prepare('INSERT INTO PROFILS (nom, prenom,adresse,mdp,tel) VALUES (:Nom,:Prenom,:Adresse, :Mdp, :Tel)');
               $stmt->bindParam(':Nom', $nom);
