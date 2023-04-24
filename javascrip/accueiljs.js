@@ -6,6 +6,7 @@ function add() {
     text_zone.setAttribute("type", "text");
     text_zone.setAttribute("name", "text_zone[]");
     text_zone.setAttribute("class","classtest");
+    removeButton.setAttribute("class","delbutton");
     removeButton.innerHTML = "X";
     removeButton.onclick = function() {
 	this.parentNode.parentNode.removeChild(this.parentNode);

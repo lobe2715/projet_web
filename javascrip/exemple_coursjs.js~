@@ -1,0 +1,25 @@
+function add() {
+  var div = document.createElement("div");
+  var text_zone = document.createElement("textarea");
+  var imageInput = document.createElement("input");
+  var removeButton = document.createElement("button");
+  
+  text_zone.setAttribute("type", "text");
+  text_zone.setAttribute("name", "text_zone[]");
+  text_zone.setAttribute("class","classtest");
+  
+  imageInput.setAttribute("type", "file");
+  imageInput.setAttribute("name", "image_upload[]");
+  imageInput.setAttribute("accept", "image/*");
+  
+  removeButton.setAttribute("class","delbutton");
+  removeButton.innerHTML = "X";
+  removeButton.onclick = function() {
+    this.parentNode.parentNode.removeChild(this.parentNode);
+  };
+  
+  div.appendChild(text_zone);
+  div.appendChild(imageInput);
+  div.appendChild(removeButton);
+  document.getElementById("boite_de_text").appendChild(div);
+}
