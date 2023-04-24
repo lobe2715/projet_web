@@ -24,15 +24,15 @@
       <input type="tel" pattern="[0-9]{10}" placeholder="Telephone:" name="Tel"><br><br>
       <button type="submit">S'enregistrer</button>  
     </form>
-    <form id="login" class="login">
+    <form id="login" action="php/log.php" method="post" class="login">
       <p>Connection:</p>
-      <input type="text" placeholder="Address Email:"> 
-      <input type="password" placeholder="Mot de passe:"><br><br>
-      <button type="button" onclick="edit_connection()">Connection</button>
+      <input type="text" placeholder="Address Email:" name="Mail"> 
+      <input type="password" placeholder="Mot de passe:" name="Mdp"><br><br>
+      <button type="submit" onclick="edit_connection()">Connection</button>
     </form>
     
   </div>
   <br>
   <br>
-  <button type="button"><a href="accueil.html">retour</a></button>
+  <button type="button"><a href="accueil.php">retour</a></button>
 </body>

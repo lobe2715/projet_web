@@ -13,7 +13,7 @@
           $nom = $_POST['Nom'];
           $prenom = $_POST['Prenom'];
           $adresse = $_POST['Adresse'];
-          $mdp = $_POST['Mdp'];
+          $mdp = password_hash($_POST['Mdp'],PASSWORD_DEFAULT);
           $tel = $_POST['Tel'];
           include('connex.inc.php');
           include('create.php');
