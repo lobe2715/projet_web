@@ -14,7 +14,7 @@ function create($pdo) {
     $pdo->exec($table);
 }
 function create_court($pdo){
-    $table = "CREATE TABLE IF NOT EXISTS COURS (
+    $table = "CREATE TABLE IF NOT EXISTS COURT(
         id INT NOT NULL AUTO_INCREMENT,
         nom VARCHAR(255) NOT NULL,
         CONSTRAINT PRIMARY KEY (id)
@@ -23,9 +23,9 @@ function create_court($pdo){
 }
 
 function create_element($pdo){
-    $table= "CREATE TABLE IF NOT EXISTS element(
+    $table= "CREATE TABLE IF NOT EXISTS ELEMENT(
         id INT NOT NULL AUTO_INCREMENT,
-        id_cours INT NOT NULL,
+        id_court INT NOT NULL,
         type ENUM('titre','texte','image','audio'),
         contenu VARCHAR(255) NOT NULL,
         CONSTRAINT PRIMARY KEY(id)
