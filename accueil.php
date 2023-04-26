@@ -44,7 +44,10 @@ else {
             <li><a href="">Accueil</a></li>
             <li class="sousmenu">Mes Cours
                 <ul class="niveau2">
-                    <li>Mon année</li>
+                  <li>Année 1</li>
+		  <li>Année 2</li>
+		  <li>Année 3</li>
+		  <li>Année 4</li>
                 </ul>
             </li>
             <li>Information</li>
