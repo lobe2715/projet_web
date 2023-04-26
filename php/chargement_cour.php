@@ -1,6 +1,6 @@
 <?php
 
-function chargement_court($id_court){
+function chargement_court($mon_id_court){
     include("connex.inc.php");
     $pdo = connexion('gs05790v');
 
