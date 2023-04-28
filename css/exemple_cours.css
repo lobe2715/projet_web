@@ -1,0 +1,176 @@
+body{
+
+    padding: 0px;
+    margin:0;
+    font-family:"Nunito";
+    font-size:25px;
+}
+
+header {
+    position: sticky;
+    top:0;
+    width: 100%;
+    height: 130px;
+    background: linear-gradient(#3c2cfb,#a8bfff);
+}
+footer{
+  /*  position: static;
+    bottom:0px;*/
+    width:100%;
+     background: linear-gradient(#a8bfff,#3c2cfb);
+   
+}
+main{
+    background-image: linear-gradient( rgba(168, 191, 255,0.6), rgba(168, 191,255, 0.6)), url("../image/fond.png");
+	 background-repeat: no-repeat;
+    }
+
+
+.menu{
+    position: absolute;
+    top: 30px;
+    left: 26%;
+}
+.right{
+    float:right;
+}
+.logo{
+    width: 120px;
+    height: 110px;
+}
+
+.profil{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 95%;
+    top: 15px;
+}
+
+
+ul li{ 
+    float:left; 
+    list-style: none;
+}
+
+ul ul{
+    display:none;
+    width:150px;
+}
+
+li.sousmenu:hover {
+    background: rgb(230, 230, 230);
+}
+
+ul.menu li.sousmenu:hover ul.niveau2{
+    display:block;
+}
+
+li{
+    color: #000;
+    padding: 4px 0 4px;
+    display:block;
+    width:200px;
+}
+
+ul{
+    padding: 0;
+    margin:0px;
+    text-align:center;
+}
+
+.colonne{
+    display: grid;
+   /* grid-template-columns: repeat(8, 1fr);*/
+    height: 100%;
+    grid-gap: 150px;
+    grid-auto-rows: 90px;
+    grid-template-areas:
+	"a a b b b b c c"
+	"a a b b b b c c"
+	"a a b b b b c c"
+	"a a b b b b c c"
+	"a a b b b b c c"
+    ;
+  align-items: start;
+  margin:10px;
+
+}
+.g1{ grid-area: a;
+     height:100%;
+     margin-left:10px;
+     background-color: rgba(168, 191, 255,0.6);
+     border:solid;
+     border-color:rgba(27, 17, 212,0.3);
+     text-align: center;
+
+  
+   }
+.g2{ grid-area: b;
+      height:100%;
+          background-color: rgba(168, 191, 255,0.6);
+     border:solid;
+     border-color:rgba(27, 17, 212,0.3);
+     text-align: center;
+   }
+
+.g3{ grid-area: c;
+      height:100%;
+        background-color: rgba(168, 191, 255,0.6);
+     border:solid;
+     border-color:rgba(27, 17, 212,0.3);
+     text-align: center;
+   }
+
+/*
+.cadremap{
+  /* position: absolute;*/
+    right: 30%;
+  /*  top: 150px;*/
+    background-color: rgba(255,255,255,0.6);
+}
+
+.cadremap p{
+    text-align: center;
+
+}
+
+
+.carte{
+    width: 350px;
+    height: 200px;
+    loading: "lazy";
+    referrerpolicy: "no-referrer-when-downgrade";
+}
+*/
+.eventmot{
+    position: absolute;
+    right: 250px;
+    top: 90px;
+    
+}
+
+.eventtxt{
+    resize: none;
+    height: 100%;
+    width: 450px;
+    border: 0px;
+    position: absolute;
+    right: 250px;
+    top: 140px;
+    resize: none;
+}
+
+.classtest{
+    border: none;
+    width: 300px;
+    height: 300px;
+    padding-top : 20%;
+    padding-left : 10% ;
+    text-align: left;
+    resize:none;
+    background-image: url("../image/evenemente.png");
+    background-size: cover;
+    background-color: inherit;
+   
+}

@@ -16,7 +16,6 @@ if (isset($_POST['Mail']) && isset($_POST['Mdp'])) {
         $req = $pdo->prepare("SELECT * FROM PROFILS WHERE adresse = :adresse");
         $req->execute([':adresse' => $mon_adresse]);
         $user = $req->fetch(PDO::FETCH_ASSOC);
-        echo "test";
         echo password_verify($mon_mdp, $user['mdp']);
         if (password_verify($mon_mdp, $user['mdp'])) {
             $_SESSION['user_email'] = $user['adresse'];

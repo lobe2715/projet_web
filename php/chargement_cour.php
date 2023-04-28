@@ -5,7 +5,7 @@ function chargement_court($mon_id_court){
     $pdo = connexion('gs05790v');
 
     try {
-        $req = $pdo->prepare("SELECT * FROM ELEMENT WHERE id_court = :id_court ORDER BY id_element ASC");
+        $req = $pdo->prepare("SELECT * FROM ELEMENT WHERE id_court = :id_court ORDER BY id ASC");
         $req->execute([':id_court' => $mon_id_court]);
         // Affichage des éléments
         while ($res = $req->fetch(PDO::FETCH_ASSOC)) {
@@ -23,8 +23,6 @@ function chargement_court($mon_id_court){
             elseif ($type == "audio") {
                 echo "<audio src='$contenu' controls> le navigateur ne supporte pas l'audio</audio>";
             }
-            
-            
         }
         $req->closeCursor();
         $pdo = null;

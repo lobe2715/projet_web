@@ -32,4 +32,5 @@ function create_element($pdo){
     )";
     $pdo->exec($table);
 }
+
 ?>
