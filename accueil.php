@@ -8,7 +8,8 @@ include ('php/liste_cours.php');
 <head>
     <meta charset=”utf-8”>
     <title>Accueil</title>
-    <link  href="css/exemple_cours.css" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/image/logos.ico" sizes="64x64">
+    <link  href="css/exemple_cours.css" rel="stylesheet" >
     <script src="javascrip/accueiljs.js"></script>
      <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -49,12 +50,19 @@ else {
     echo "<br> Veuillez vous connecter <br>";
 }
 ?>   
-<div class="eventmot"><h1> Evenement:  </h1></div>
+<div class="eventmot"><h1> Evenement </h1></div>
 <div class="eventtxt" id="boite_de_text"></div>
-<button class="eventmot" id="button" value="Add" onclick="add()">add postite </button>
+<button class="bouton_postite" id="button" value="Add" onclick="add()"> Ajouter postite </button>
 <!--
 <img  class="right" src="image/evenement.png" alt="evenement" width="900">
 -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>

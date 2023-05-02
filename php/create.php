@@ -17,6 +17,7 @@ function create_court($pdo){
     $table = "CREATE TABLE IF NOT EXISTS COURT(
         id INT NOT NULL AUTO_INCREMENT,
         nom VARCHAR(255) NOT NULL,
+        classe ENUM('1','2','3','4','5','6'),
         CONSTRAINT PRIMARY KEY (id)
     )";
     $pdo->exec($table);

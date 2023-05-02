@@ -7,11 +7,14 @@
   <body>
       <?php if (   isset($_POST['nom'])) {
           $nom = $_POST['nom'];
+          $classe = $_POST['classe'];
           include('connex.inc.php');
           $pdo = connexion('gs05790v');
           try {
-              $stmt = $pdo->prepare('INSERT INTO COURT (id,nom) VALUES (NULL,:nom)');
+              $stmt = $pdo->prepare('INSERT INTO COURT (id,nom,classe) VALUES (NULL,:nom,:classe)');
               $stmt->bindParam(':nom', $nom);
+              $stmt->bindParam(':classe', $classe);
+              
               $stmt->execute();
 
               if ($stmt->rowCount() == 1) {

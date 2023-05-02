@@ -16,6 +16,13 @@ function liste_cours(){
             '<li>
                 <form method="POST" action="php/ajouter_court.php">
                     <input type="text" name="nom" placeholder="Nom du court">
+                        <select class="niveau" id="id_niveau" name="niveau">
+                            <option value="1">L1</option>
+                            <option value="2">L2</option>
+                            <option value="3">L3</option>
+                            <option value="4">L4</option>
+                            <option value="5">L5</option>
+                            <option value="6">L6</option>
                         <input type="submit" value="Ajouter">
                         </form>
                 </li>';

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang=”fr”>
+
+  <head>
+    <meta charset=”utf-8”>
+    <title>Accueil</title>
+    <link  href="css/exemple_cours.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <form method="post" action="mon_script.php">
+      <label for="type_element">Type d'élément :</label>
+      <select id="type_element" name="type_element" onchange="afficherChamp()">
+	<option value="texte">Texte</option>
+	<option value="audio">Audio</option>
+	<option value="image">Image</option>
+      </select>
+
+      <div id="champ_element"></div>
+
+      <input type="submit" value="Ajouter">
+    </form>
+
+    <script>
+      function afficherChamp() {
+	  var typeElement = document.getElementById("type_element").value;
+	  var champElement = document.getElementById("champ_element");
+	  
+	  if (typeElement == "texte") {
+	      champElement.innerHTML = '<label for="texte_element">Texte :</label><br><textarea id="texte_element" name="texte_element"></textarea>';
+	  } else if (typeElement == "audio") {
+	      champElement.innerHTML = '<label for="audio_element">Audio :</label><br><input type="file" id="audio_element" name="audio_element">';
+	  } else if (typeElement == "image") {
+	      champElement.innerHTML = '<label for="image_element">Image :</label><br><input type="file" id="image_element" name="image_element">';
+	  }
+      }
+      </script>
+  </body>
+</html>

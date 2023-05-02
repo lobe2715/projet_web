@@ -6,11 +6,35 @@
 </head>
 <body>
 <?php if (  isset($_POST['id_court'])
-    && isset($_POST['type'])
-    && isset($_POST['contenu'])){
-    
-    $type = $_POST['type'];
-    $contenu = $_POST['contenu'];
+    && isset($_POST['type_element'])){
+    $type = $_POST['type_element']; 
+    if ($type == 'texte') {
+        $contenu = $_POST['texte_element'];
+    }
+    else if ($type == 'audio') {
+    $contenu = $_FILES['audio_element']['name'];
+    // Enregistre le fichier audio dans un dossier
+    move_uploaded_file($_FILES['audio_element']['tmp_name'], '../asset/'.$contenu);
+    $contenu="../asset".$contenu;
+    }
+
+    else if ($type == 'image') {
+        $nom_fichier = $_FILES['image_element']['name'];
+        $chemin_fichier = $_FILES['image_element']['tmp_name'];
+        $extension_fichier = pathinfo($nom_fichier,PATHINFO_EXTENSION);
+        $nouveau_nom_fichier = uniqid().'.'.$extension_fichier;
+        $chemin_nouveau_fichier = '../asset/'.$nouveau_nom_fichier;
+    // Enregistre l'image dans un dossier
+        if(move_uploaded_file($chemin_fichier,$chemin_nouveau_fichier)){
+            $contenu=$chemin_nouveau_fichier;
+        }
+        else{
+            echo "<p>ERREUR enregistrement</p>";
+            echo "Chemin du fichier :". $chemin_fichier;
+            exit();
+        }
+        echo "Chemin du fichier :". $chemin_fichier;
+  }
     $id_court = $_POST['id_court'];
 
     /*INCLUDE ET CONNEXION*/
@@ -19,9 +43,14 @@
 
 
     try{
+        echo $chemin_fichier ;
+        echo "<br></br>";
         echo $type ;
+        echo "<br></br>";
         echo $id_court;
+        echo "<br></br>";
         echo $contenu;
+        echo "<br></br>";
         $stmt = $pdo->prepare("INSERT INTO ELEMENT (id_court, type, contenu) VALUES (:id_court, :type, :contenu)");
         $stmt->bindParam(':id_court', $id_court);
         $stmt->bindParam(':type', $type);
@@ -29,8 +58,8 @@
         $stmt->execute();
         if ($stmt->rowCount() == 1) {
             echo '<p>Ajout effectué</p>';
-            header('Location: ../exemple_cours.php?id_court='.$id_court);
-            exit();
+            /*header('Location: ../exemple_cours.php?id_court='.$id_court);
+            exit();*/
         } else {
             echo '<p>Erreur</p>';
         }
