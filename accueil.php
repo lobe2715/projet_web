@@ -1,6 +1,9 @@
 <?php
 session_start(); // Démarrer la session
+include ('php/connex.inc.php');
 include ('php/liste_cours.php');
+include ('php/liste_court_niveau.php');
+$pdo= connexion('gs05790v');
 ?>
 <!DOCTYPE html>
 <html lang=”fr”>
@@ -17,7 +20,7 @@ include ('php/liste_cours.php');
 
 
 
-<body">
+<body>
 
 <header>
     <div><img class="logo" src="image/logo.png">
@@ -25,11 +28,13 @@ include ('php/liste_cours.php');
             <li><a href="">Accueil</a></li>
             <li class="sousmenu">Mes Cours
                 <ul class="niveau2">
-                <?php liste_cours(); ?>
-
+                <?php liste_niveau_cours($pdo); ?>
                 </ul>
             </li>
             <li>Information</li>
+            <ul class="niveau2">
+          
+            </ul>
             <li class="sousmenu">Mon Profil
                 <ul class="niveau2">
                     <li>Mon compte</li>

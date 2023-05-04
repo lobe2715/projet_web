@@ -3,7 +3,7 @@
 
 <head>
     <meta charset=”utf-8”>
-    <title>Accueil</title>
+    <title>ceci est un court</title>
     <link  href="css/exemple_cours.css" rel="stylesheet" />
     <script src="javascrip/exemple_coursjs.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -43,13 +43,13 @@
                 
                 <div class="g2"
                 <menu>
-                <?php chargement_court($_GET['id_court']);?>
+                <?php chargement_court($_GET['id']);?>
                 </menu>
             </div>
 
             <div class="g3">
                 <form method="POST" action="php/ajouter_element.php" enctype="multipart/form-data">
-                <input type="hidden" name="id_court" value="<?php echo htmlspecialchars($_GET['id_court']) ?>">
+                <input type="hidden" name="id_court" value="<?php echo htmlspecialchars($_GET['id']) ?>">
                 <label for="type_element">Type d'élément :</label>
                 <select id="type_element" name="type_element" onchange="afficherChamp()">
 	                <option value="texte">Texte</option>

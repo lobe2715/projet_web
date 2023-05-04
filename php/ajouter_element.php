@@ -11,12 +11,26 @@
     if ($type == 'texte') {
         $contenu = $_POST['texte_element'];
     }
-    else if ($type == 'audio') {
-    $contenu = $_FILES['audio_element']['name'];
-    // Enregistre le fichier audio dans un dossier
-    move_uploaded_file($_FILES['audio_element']['tmp_name'], '../asset/'.$contenu);
-    $contenu="../asset".$contenu;
+    else if($type == 'titre'){
+        $contenu = $_POST['titre_element'];
     }
+    else if ($type == 'audio') {
+        $nom_fichier = $_FILES['audio_element']['name'];
+        $chemin_fichier = $_FILES['audio_element']['tmp_name'];
+        $extension_fichier = pathinfo($nom_fichier,PATHINFO_EXTENSION);
+        $nouveau_nom_fichier = uniqid().'.'.$extension_fichier;
+        $chemin_nouveau_fichier = '../asset/'.$nouveau_nom_fichier;
+    // Enregistre l'image dans un dossier
+        if(move_uploaded_file($chemin_fichier,$chemin_nouveau_fichier)){
+            $contenu=$chemin_nouveau_fichier;
+        }
+        else{
+            echo "<p>ERREUR enregistrement</p>";
+            echo "Chemin du fichier :". $chemin_fichier;
+            exit();
+        }
+        echo "Chemin du fichier :". $chemin_fichier;
+  }
 
     else if ($type == 'image') {
         $nom_fichier = $_FILES['image_element']['name'];
@@ -58,8 +72,8 @@
         $stmt->execute();
         if ($stmt->rowCount() == 1) {
             echo '<p>Ajout effectué</p>';
-            /*header('Location: ../exemple_cours.php?id_court='.$id_court);
-            exit();*/
+            header('Location: ../exemple_cours.php?id_court='.$id_court);
+            exit();
         } else {
             echo '<p>Erreur</p>';
         }

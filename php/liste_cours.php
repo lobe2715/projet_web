@@ -1,19 +1,24 @@
 <?php
 
-function liste_cours(){
-    include('connex.inc.php');
-    include('create.php');
-    $pdo = connexion('gs05790v');
-    create_court($pdo);
+function liste_cours($pdo, $classe){
     try{
-        $stmt = $pdo->prepare("SELECT * FROM COURT");
+        $stmt = $pdo->prepare("SELECT * FROM COURT WHERE classe = :classe");
+        $stmt->bindParam(':classe', $classe);
         $stmt->execute();
-        
+        echo '<div class="g1">';
+        echo '<ul>';
         while ($ligne = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<li><a href="genpage_court.php?id='.$ligne['id'].'">'.htmlspecialchars($ligne['nom']) . '</a></li>';
+            echo '<li><a href="genpage_court.php?id='.$ligne['id'].'">'.htmlspecialchars($ligne['nom']).'</a></li>';
         }
-        echo
-            '<li>
+        echo '</ul>';
+        echo '</div>';
+        echo '<div class="g2">';
+        
+        echo ' </div>';
+
+        echo '<div class="g3">';
+        echo 'test3';
+        echo '
                 <form method="POST" action="php/ajouter_court.php">
                     <input type="text" name="nom" placeholder="Nom du court">
                         <select class="niveau" id="id_niveau" name="niveau">
@@ -24,9 +29,8 @@ function liste_cours(){
                             <option value="5">L5</option>
                             <option value="6">L6</option>
                         <input type="submit" value="Ajouter">
-                        </form>
-                </li>';
-
+                        </form>';
+        echo '</div>';
     }
     catch(PDOException $e) {
         echo '<p>Problème PDO</p>';

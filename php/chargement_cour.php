@@ -1,10 +1,8 @@
 <?php
 
-function chargement_court($mon_id_court){
-    include("connex.inc.php");
-    $pdo = connexion('gs05790v');
-
+function chargement_court($pdo,$mon_id_court){
     try {
+        
         $req = $pdo->prepare("SELECT * FROM ELEMENT WHERE id_court = :id_court ORDER BY id ASC");
         $req->execute([':id_court' => $mon_id_court]);
         // Affichage des éléments
@@ -17,7 +15,7 @@ function chargement_court($mon_id_court){
                 echo "<p>$texte</p>";
             }
             elseif ($type == "image") {
-                echo "<img src=$contenu>";
+                echo "<img class='image-auto' src=$contenu>";
             }
             elseif($type == "titre"){
                 echo "<h2>$contenu</h2>";
