@@ -38,6 +38,7 @@
     $pdo = connexion('gs05790v');
     include('php/liste_cours.php');
     include('php/chargement_cour.php');
+    include('php/index_des_cours.php');
     ?>
     <div class="colonne">
         
@@ -55,6 +56,13 @@
         echo '<img src="https://assets.codepen.io/6093409/sprocket.svg" alt="Logo HubSpot" width=100% height=100%/>';
         echo '</div>';
     }
+    echo '<div class="g3">';
+    echo '<form method="POST" action="php/ajouter_court.php">';
+    echo '<input type="text" name="nom" placeholder="Nom du court" required>';
+    echo '<input type="hidden" name="classe" value="'.htmlspecialchars($_GET['classe']);
+    echo '<input type="submit" value="Ajouter"></form>';
+
+    echo '</div>';
     ?>
 </div>
     </main>
