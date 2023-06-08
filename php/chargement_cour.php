@@ -1,6 +1,6 @@
 <?php
 
-function chargement_court($pdo,$mon_id_court){
+function chargement_court($pdo,$mon_id_court,$classe){
     try {
         
         $req = $pdo->prepare("SELECT * FROM ELEMENT WHERE id_court = :id_court ORDER BY id ASC");
@@ -26,6 +26,7 @@ function chargement_court($pdo,$mon_id_court){
             echo "<form method=\"POST\" action=\"php/supprimer_element.php\">";
             echo "<input type=\"hidden\" name=\"id_element\" value=$id_element>";
             echo "<input type=\"hidden\" name=\"mon_id_court\" value=$mon_id_court>";
+            echo "<input type=\"hidden\" name=\"classe\" value=$classe>";
             echo "<input type=\"submit\" value=\"Supprimer\">";
             echo "</form>";
         }

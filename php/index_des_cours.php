@@ -5,7 +5,7 @@ function index_des_cours($pdo,$nb_classe){
         $stmt->bindParam(':classe', $nb_classe);
         $stmt->execute();
         while ($resultats = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo '<li><a href="page_de_court.php?id='.$resultats['id'].'&classe='.$nb_classe.'">'.$resultats['nom'].'</a></li>';
+            echo '<li><a href="page_de_court.php?id_court='.$resultats['id'].'&classe='.$nb_classe.'">'.$resultats['nom'].'</a></li>';
         }
     }
     catch(PDOException $e) {

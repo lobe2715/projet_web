@@ -7,8 +7,11 @@
 <body>
 
 <?php if (  isset($_POST['id_element'])
-    && isset($_POST['mon_id_court'])){
+    && isset($_POST['mon_id_court'])
+    && isset($_POST['classe'])
+){
     $id=$_POST['id_element'];
+    $classe=$_POST['classe'];
     $id_court=$_POST['mon_id_court'];
     echo $id;
     echo $id_court;
@@ -18,7 +21,7 @@
         $stmt = $pdo->prepare("DELETE FROM ELEMENT where id=:id");
         $stmt->bindParam(':id',$id);
         $stmt->execute();
-       header('location: /exemple_cours.php?id_court='.$id_court);
+       header('location: /page_de_court.php?id_court='.$id_court.'&classe='.$classe);
         exit();
         $stmt->closeCursor();
         $pdo = null;

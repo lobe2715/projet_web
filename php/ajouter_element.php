@@ -6,8 +6,10 @@
 </head>
 <body>
 <?php if (  isset($_POST['id_court'])
+    && isset($_POST['classe'])
     && isset($_POST['type_element'])){
-    $type = $_POST['type_element']; 
+    $classe=$_POST['classe'];
+    $type = $_POST['type_element'];
     if ($type == 'texte') {
         $contenu = $_POST['texte_element'];
     }
@@ -72,7 +74,7 @@
         $stmt->execute();
         if ($stmt->rowCount() == 1) {
             echo '<p>Ajout effectué</p>';
-            header('Location: ../exemple_cours.php?id_court='.$id_court);
+            header('Location: ../page_de_court.php?id_court='.$id_court.'&classe='.$classe);
             exit();
         } else {
             echo '<p>Erreur</p>';
